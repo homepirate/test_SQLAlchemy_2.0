@@ -224,6 +224,7 @@ async def select_resumes_with_all_relationships():
         result = await session.execute(query)
         result = result.unique().scalars().all()
         print(result)
+        return result
 
 
 async def main():
@@ -240,7 +241,7 @@ async def main():
     # await get_dtos_mapp()
     # await get_dtos_mapp_with_relationship()
     await add_vacancies_replies()
-    await select_resumes_with_all_relationships()
+    # await select_resumes_with_all_relationships()
 
 
 if __name__ == '__main__':
